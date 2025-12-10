@@ -17,6 +17,7 @@ public class Motor {
 
     PIDController pid = new PIDController(1.45, 1.23, 0.13);
 
+    
     private double objective_position = 0;
 
 
