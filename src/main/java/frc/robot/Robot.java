@@ -113,7 +113,7 @@ public class Robot extends TimesliceRobot {
     if( controller.getAButton() ) {
       modifier = 0;
     }
-    motor.modifyPosition(modifier*0.25);
+    motor.modifyPosition(modifier*25);
   }
 
   /** This function is called once when the robot is disabled. */
