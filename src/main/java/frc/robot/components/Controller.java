@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.data.StickPosition;
 import edu.wpi.first.wpilibj.XboxController;
 
+import java.lang.Math;
+
 public class Controller {
     private final XboxController hardwareController;
 
@@ -44,6 +46,17 @@ public class Controller {
      */
     public StickPosition getRightStickPosition() {
         return new StickPosition(hardwareController.getRightX(), hardwareController.getRightY());
+    }
+
+    public double getRightStickAngle() {
+        double x_pos = hardwareController.getRightX();
+        double y_pos = hardwareController.getRightY();
+        
+        double radians = Math.atan2(y_pos, x_pos);
+        
+        double degrees = Math.toDegrees(radians);
+
+        return degrees/360d;
     }
 
     public boolean getAButton() {

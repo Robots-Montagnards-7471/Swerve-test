@@ -28,7 +28,7 @@ public class Motor {
     public Motor()
     {
         motor = new SparkMax(7, SparkLowLevel.MotorType.kBrushless);
-        encoder = motor.getEncoder();
+        encoder = motor.getAlternateEncoder();
     }
 
     public void updateData() {
